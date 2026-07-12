@@ -1,0 +1,30 @@
+table {
+	font-family: Arial, sans-serif;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+tbody tr:first-child td:last-child {
+	color: #ff0000;
+}
+
+th:nth-child(6),
+th:nth-child(7) {
+	color: #ff0000;
+}
+
+td:nth-child(6),
+td:nth-child(7) {
+	color: #ff0000;
+}
+
+td,
+th,
+caption {
+	border: 1px solid black;
+}
+
+caption {
+	font-weight: bold;
+	border-bottom: none;
+}
