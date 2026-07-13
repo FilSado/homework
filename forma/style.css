@@ -1,0 +1,59 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.form {
+	color: rgba(164, 45, 220, 0.967);
+	width: 500px;
+	margin: 30px auto;
+}
+
+.form-group {
+	background-color: rgba(228, 179, 231, 0.767);
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+legend {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.label {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.label input,
+.label textarea {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 70px;
+	max-height: 250px;
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.checkbox input {
+	cursor: pointer;
+}
+
+.button {
+	color: rgba(164, 45, 220, 0.967);
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
