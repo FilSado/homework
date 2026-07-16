@@ -25,11 +25,11 @@ p {
 
 .article {
 	padding-top: 80px;
-    padding-bottom: 120px;
+	padding-bottom: 120px;
 }
 
 .article-title {
-    max-width: 596px;
+	max-width: 596px;
 	margin-bottom: 40px;
 	font-family: Oswald;
 	font-weight: 600;
@@ -54,12 +54,35 @@ p {
 	color: #535755;
 }
 
-.article-mb {
+.article-mb-1 {
 	margin-bottom: 80px;
 }
 
-.article-img {
-    margin-bottom: 40px;
+.article-mb-2 {
+	margin-bottom: 40px;
+}
+
+.article-decor-wrapper {
+	position: relative;
+}
+
+.article-decor-wrapper::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	background: url(../images/decor-icon.svg) no-repeat;
+	width: 528px;
+	height: 48px;
+}
+
+.article-decor-wrapper-1::before {
+	top: 100px;
+	left: -350px;
+}
+
+.article-decor-wrapper-2::before {
+	bottom: 136px;
+	right: -350px;
 }
 
 .article-img,
@@ -69,13 +92,31 @@ p {
 
 .article-list {
 	margin-top: 0;
-	padding-left: 14px;
+	padding-left: 16px;
 }
 
 .article-item {
 	margin-bottom: 12px;
 }
 
-.article-video {
-	margin-bottom: 40px;
+.article-item::marker {
+	font-size: 22px;
+	color: #3596ed;
+}
+
+.article-play-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	background-color: #3596ed;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
 }
