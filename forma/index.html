@@ -3,68 +3,75 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>forma</title>
-		<link rel="stylesheet" href="style.css" />
+		<title>Стилизация формы</title>
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
 		<form class="form">
 			<fieldset class="form-group">
-				<legend>Ваши линые данные</legend>
+				<legend class="form-group-title">Ваши линые данные</legend>
+				<label for="name" class="label">Ваше имя</label>
+				<input
+					id="name"
+					class="input"
+				 	type="text" placeholder="Имя" name="name"
+				 	required
+			    />
 
-				<label class="label">
-					Ваше имя
-					<input type="text" placeholder="Имя" name="name" required />
-				</label>
+				<label for="age" class="label">Ваш возвраст</label>
+				<input
+					id="age"
+					class="input"
+					type="number"
+					placeholder="Возвраст"
+					name="age"
+					inputmode="numeric"
+					required
+				/>
 
-				<label class="label">
-					Ваш возвраст
-					<input
-						type="number"
-						placeholder="Возвраст"
-						name="age"
-						inputmode="numeric"
-						required
-					/>
-				</label>
+				<label for="phone" class="label">Ваш номер телефона</label>
+				<input
+					id="phone"
+					class="input"
+					type="tel"
+					placeholder="Номер телефона"
+					name="phone"
+					inputmode="tel"
+					required
+				/>
 
-				<label class="label">
-					Ваш номер телефона
-					<input
-						type="tel"
-						placeholder="Номер телефона"
-						name="tel"
-						inputmode="tel"
-						required
-					/>
-				</label>
-
-				<label class="label">
-					Ваша почта
-					<input
-						type="email"
-						placeholder="Почта"
-						name="email"
-						inputmode="email"
-						required
-					/>
-				</label>
-
-				<label class="label">
-					Сообщение
-					<textarea
-						required
-						name="message"
-						placeholder="Ваше сообщение"
-					></textarea>
-				</label>
-
-				<label class="checkbox">
-					<input type="checkbox" name="first" value="first" required />
-					Я принимаю правила
-				</label>
-
-				<button class="button">Отправить</button>
+				<label for="email" class="label">Ваша почта</label>
+				<input
+					id="email"
+					class="input"
+					type="email"
+					placeholder="Почта"
+					name="email"
+					inputmode="email"
+					required
+				/>
 			</fieldset>
+			<fieldset class="form-group">
+				<label for="message" class="label">Сообщение</label>
+				<textarea
+					id="message"
+					class="textarea"
+					required
+					name="message"
+					placeholder="Ваше сообщение"
+				></textarea>
+
+				<label class="label checkbox-label">
+				<input class="checkbox"
+				    type="checkbox" name="checkbox"
+					required
+					disabled
+				/>
+				<span class="checkbox-text">Я принимаю правила</span>
+				</label>
+			</fieldset>
+			<button class="button">Отправить</button>
 		</form>
 	</body>
 </html>
