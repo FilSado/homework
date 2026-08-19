@@ -57,8 +57,10 @@ const createTodoElement = (todo) => {
 
 	todoElement.classList.add("todo");
 
+	todoElement.dataset.id = todo[todoKeys.id];
+
 	todoElement.innerHTML = `
-  <div class="todo-text">${todo.text}</div>
+  <div class="todo-text">${todo[todoKeys.text]}</div>
 
   <div class="todo-actions">
     <button class="button-complete button">&#10004;</button>
@@ -74,21 +76,6 @@ const handleCreateTodo = (todos, text) => {
 	const todo = createTodo(todos, text);
 
 	const todoElement = createTodoElement(todo);
-
-	const completeButton = todoElement.querySelector(".button-complete");
-	const deleteButton = todoElement.querySelector(".button-delete");
-
-	completeButton.addEventListener("click", () => {
-		completeTodoById(todos, todo.id);
-
-		todoElement.classList.toggle("completed");
-	});
-
-	deleteButton.addEventListener("click", () => {
-		deleteTodoById(todos, todo.id);
-
-		todoElement.remove();
-	});
 
 	todosElement.append(todoElement);
 };
@@ -107,4 +94,22 @@ form.addEventListener("submit", (event) => {
 	handleCreateTodo(todos, text);
 
 	input.value = "";
+});
+
+// Делегирование событий 
+todosElement.addEventListener("click", ({ target }) => {
+	const todo = target.closest(".todo");
+	if (!todo) return;
+
+	const todoId = Number(todo.dataset.id);
+
+	if (target.matches(".button-complete")) {
+		completeTodoById(todos, todoId);
+		todo.classList.toggle("completed");
+	}
+
+	if (target.matches(".button-delete")) {
+		deleteTodoById(todos, todoId);
+		todo.remove();
+	}
 });
